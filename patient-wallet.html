@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Health Wallet - QuickCure</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="Patient-wallet.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="QuickCureLogo.png" alt="Quickcure Logo" class="logo-img" />
+        <h1>QuickCure</h1>
+      </div>
+      <nav class="nav" role="navigation" aria-label="Primary Navigation">
+        <a href="patient.html">Dashboard</a>
+        <a href="patient-appointment.html">Book Appointment</a>
+        <a href="#" id="logoutBtnDesktop" class="logout-btn">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+        <!-- <a href="patient-profile.html">
+          <img src="User-Profile.png" alt="User  Profile" />
+        </a> -->
+      </nav>
+      <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+        <a href="patient.html">Dashboard</a>
+        <a href="patient-profile.html">Profile</a>
+        <a href="patient-appointment.html">Book Appointment</a>
+        <a href="patient-symptom-checker.html">Symptom Checker</a>
+        <a href="#" id="logoutBtnMobile" class="logout-btn">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="patient-dashboard" role="main">
+    <div class="container">
+      <section class="health-wallet-section" aria-label="My Health Wallet">
+        <h2><i class="fas fa-wallet"></i> My Health Wallet</h2>
+        <div class="wallet-tabs" role="tablist">
+          <div class="wallet-tab active" data-tab="prescriptions" role="tab" tabindex="0" aria-selected="true" aria-controls="prescriptionsContent" id="tab-prescriptions">Prescriptions</div>
+          <div class="wallet-tab" data-tab="records" role="tab" tabindex="-1" aria-selected="false" aria-controls="recordsContent" id="tab-records">Medical Records</div>
+        </div>
+
+        <div id="prescriptionsContent" class="tab-content active" role="tabpanel" aria-labelledby="tab-prescriptions">
+          <div class="no-items-message" id="noPrescriptionsMessage">
+            <i class="fas fa-prescription-bottle-alt"></i>
+            <p>No digital prescriptions found.</p>
+          </div>
+        </div>
+
+        <div id="recordsContent" class="tab-content" role="tabpanel" aria-labelledby="tab-records">
+          <div class="no-items-message" id="noRecordsMessage">
+            <i class="fas fa-file-medical"></i>
+            <p>No medical records found.</p>
+            <p>You can upload them in your profile or they will appear after consultations.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="notification" class="notification" role="alert" aria-live="assertive"></div>
+
+  <!-- <footer>
+    <p>© 2025 QuickCare. Making healthcare accessible for everyone.</p>
+  </footer> -->
+
+  <script src="Patient-wallet.js"></script>
+</body>
+</html>

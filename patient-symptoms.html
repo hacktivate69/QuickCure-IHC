@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Profile - QuickCure</title>
+    <link rel="stylesheet" href="patient-symptoms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="QuickCureLogo.png" alt="HealthCare+" class="logo-img">
+                <h1>QuickCure</h1>
+            </div>
+            <nav class="nav">
+                <a href="patient.html">Dashboard</a>
+                <a href="patient-appointment.html">Book Appointments</a>
+                <a href="#" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="patient.html">Dashboard</a>
+                <a href="patient-appointment.html">Book Appointments</a>
+                <a href="#" class="logout-btn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="patient-dashboard">
+        <div class="container">
+        <section class="symptom-checker-section" aria-label="AI Symptom Checker and Doctor Recommendation">
+            <h2>AI Symptom Checker &amp; Doctor Recommendation</h2>
+            <div class="symptom-input-group">
+            <textarea
+                id="symptomsInput"
+                placeholder="Describe your symptoms (e.g., 'fever, cough, body aches', 'chest pain, shortness of breath')"
+                aria-label="Enter your symptoms"
+            ></textarea>
+            <button id="checkSymptomsBtn" aria-label="Check Symptoms">
+                <i class="fas fa-stethoscope"></i> Check Symptoms
+            </button>
+            </div>
+
+            <div class="recommendation-results" id="recommendationResults">
+            <div class="no-results-symptom" id="noSymptomsMessage">
+                <i class="fas fa-lightbulb"></i>
+                <p>Enter your symptoms above to get started.</p>
+            </div>
+            </div>
+        </section>
+        </div>
+  </main>
+  <script src="patient-symptoms.js"></script>
+</body>
+</html>

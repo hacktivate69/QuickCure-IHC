@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #667EEA;
+}
+
+.logout-btn {
+    background: #ff6b6b;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #333;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 20px;
+    gap: 15px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile-menu a:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu a:hover {
+    color: #667EEA;
+}
+
+/* Profile image in nav */
+.nav > a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Patient Dashboard */
+.patient-dashboard {
+    margin-top: 80px;
+    padding: 20px 0 40px;
+}
+
+/* Symptom Checker Section */
+.symptom-checker-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.symptom-checker-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center;
+}
+
+.symptom-input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.symptom-input-group textarea {
+    flex: 1;
+    resize: vertical;
+    min-height: 100px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.symptom-input-group textarea:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.symptom-input-group button {
+    background: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.symptom-input-group button:hover {
+    background: #38a169;
+    transform: translateY(-2px);
+}
+
+/* Recommendation Results */
+.recommendation-results {
+    min-height: 150px;
+    text-align: center;
+}
+
+.no-results-symptom {
+    color: #666;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.no-results-symptom i {
+    font-size: 2.5rem;
+    color: #667eea;
+}
+
+.result-card {
+    background: #f9fafb;
+    border-radius: 15px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.result-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.result-card p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.result-card button.btn-primary {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    background: #48bb78;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.result-card button.btn-primary:hover {
+    background: #38a169;
+    transform: translateY(-2px);
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #48bb78;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: none;
+    font-weight: 600;
+    z-index: 1000;
+    animation: slideIn 0.3s ease forwards;
+}
+
+.notification.error {
+    background: #ef4444;
+}
+
+.notification.show {
+    display: block;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .symptom-checker-section {
+        padding: 25px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+.symptom-input-group {
+    display: flex;
+    gap: 10px; /* slightly smaller gap */
+    align-items: flex-start; /* align button top with textarea */
+    margin-bottom: 30px;
+}
+
+.symptom-input-group textarea {
+    flex: 1;
+    resize: vertical;
+    min-height: 100px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.symptom-input-group button {
+    background: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 15px; /* smaller padding */
+    font-size: 0.9rem; /* smaller font size */
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    height: fit-content; /* button height fits content */
+}
+
+.symptom-input-group button:hover {
+    background: #38a169;
+    transform: translateY(-2px);
+}
+}
